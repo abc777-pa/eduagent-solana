@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>EduAgent — Pilot Demo</title>
+  <style>
+    body{font-family:system-ui,Arial;padding:24px;max-width:760px;margin:auto}
+    h1{margin:0 0 4px} .sub{color:#666;margin:0 0 18px}
+    .card{border:1px solid #eee;padding:16px;border-radius:12px;margin:14px 0}
+    button{padding:10px 16px;border:0;border-radius:10px;cursor:pointer}
+    .primary{background:#14f195} pre{background:#0f172a;color:#e2e8f0;padding:12px;border-radius:8px;overflow:auto}
+    input{width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;margin:8px 0 12px}
+    a{word-break:break-all}
+  </style>
+</head>
+<body>
+  <h1>EduAgent — Pilot Demo</h1>
+  <p class="sub">Solana Devnet • Intebix ↔ Eurasian Bank (pilot simulation)</p>
+
+  <div class="card">
+    <h3>1) Оплата (KZTE • Pilot)</h3>
+    <p><small>Нажми «Pay (Pilot)» — получишь mock-ответ шлюза и tx_hash.</small></p>
+    <button id="payBtn" class="primary">Pay (Pilot)</button>
+    <pre id="payOut">…</pre>
+    <p><a id="expl" href="#" target="_blank" rel="noreferrer">Ссылка на Solana Devnet Explorer появится тут</a></p>
+  </div>
+
+  <div class="card">
+    <h3>2) NFT-достижение (заявка)</h3>
+    <p><small>Это заявка в API. Реальный минт делаем отдельным скриптом на Devnet.</small></p>
+    <input id="wallet" placeholder="Student wallet (Devnet public key)"/>
+    <button id="mintBtn">Request NFT Badge “Perfect Attendance”</button>
+    <pre id="mintOut">…</pre>
+  </div>
+
+  <script src="./demo.js"></script>
+</body>
+</html>

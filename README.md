@@ -1,58 +1,114 @@
-# 🧠 EduAgent — AI Assistant for Schools on Solana  
-**Pilot Integration: Intebix ↔ Eurasian Bank | Digital Tenge (KZTE) | NFT Achievements | AI Gamification**
+🎓 EduAgent — AI Assistant for Schools on Solana
 
----
+EduAgent connects schools in Kazakhstan to the Digital Tenge (KZTE) pilot via Solana blockchain.
+It automates tuition payments and rewards students with NFT achievement badges powered by AI gamification.
+Built during the Solana Cypherpunk Hackathon 2025.
 
-## 🌍 Overview
-EduAgent isn’t just software — it’s a mission to make education more transparent, accessible, and inspiring through **AI** and **Solana blockchain**.  
-We automate communication, attendance tracking, and tuition payments for schools, while motivating students with **NFT achievements** and **AI-guided goals**.  
+🧠 Overview
 
-The project builds on the **pilot integration between Intebix and Eurasian Bank**, exploring real-world payment flows using **Digital Tenge (KZTE)** and **USDC**.  
-EduAgent shows how Kazakhstan’s digital currency initiative can empower schools, parents, and students with trust and transparency.
+Goal: Bring together education and Web3 finance.
+EduAgent enables schools to accept stablecoin payments (KZTE / USDC) and reward students for attendance, quiz completion, and good performance through AI-tracked NFT achievements.
 
----
+Built by: Rakhman Ibragimov 🇰🇿
+Location: Kazakhstan
+Tracks: Stablecoins / RWAs · Consumer Apps · Infrastructure
 
-## 🧩 Problem & Vision
-Kazakhstan is pioneering one of the world’s first **Digital Tenge pilots**, yet most schools still operate offline — manual payments, paper reports, and low student motivation.  
-EduAgent connects this national fintech innovation with the education sector, creating a digital ecosystem where payments, communication, and achievements live on-chain.
+⚙️ Tech Stack
 
----
+Blockchain: Solana Devnet
 
-## ⚙️ Tech Stack
-| Layer | Technology |
-|-------|-------------|
-| Frontend | Next.js + TypeScript |
-| Backend | FastAPI (Python) |
-| AI Core | Gemini / OpenAI API |
-| Blockchain | Solana Web3.js (Devnet) |
-| Payments | Mock Intebix ↔ Eurasian Bank Pilot Gateway + Phantom Wallet |
-| Database | Supabase / PostgreSQL |
-| NFTs | Metaplex NFT Standard (Achievements, Badges, Certificates) |
+Backend: FastAPI (Python)
 
----
+Frontend: HTML + JS (Vanilla, minimal UI)
 
-## 🏆 AI & Gamification
-EduAgent turns learning into an interactive, rewarding experience.  
-AI tracks progress, analyzes engagement, and suggests personal goals — “Complete 10 days of perfect attendance to earn a new NFT badge.”  
-Students receive **NFT rewards** for achievements like consistency, collaboration, and creativity — proof of real effort stored on-chain.  
+AI Layer: Scoring logic & gamified events
 
-🎓 **Examples of NFT Badges:**  
-- “STEM Explorer” — for winning a science olympiad  
-- “Perfect Attendance” — for a full month without absences  
-- “Kindness Token” — for helping classmates  
-- “AI Mentor Badge” — for completing a course with excellence  
+Database: In-memory / Supabase-ready
 
----
+Libraries: web3.js · spl-token · dotenv
 
-## 💸 Pilot Integration
-EduAgent simulates the **Intebix ↔ Eurasian Bank pilot** for Digital Tenge payments using a mock gateway and **Solana Devnet**.  
-When parents pay tuition, the transaction is confirmed on-chain within seconds — transparent, auditable, and secure.
+🚀 Run Locally
+# Clone the repo
+git clone https://github.com/abc777-pa/eduagent-solana.git
+cd eduagent-solana
 
-```json
+# Install backend deps
+cd backend
+pip install -r ../requirements.txt
+
+# Run backend (port 8000)
+python -m uvicorn app.main:app --reload --port 8000
+
+# Run frontend (port 5500)
+cd frontend
+python -m http.server 5500
+
+# Open browser
+http://127.0.0.1:5500
+
+🔌 API Reference
+Method	Endpoint	Description
+GET	/health	Check API status
+POST	/api/pay	Simulate tuition payment (mock)
+POST	/api/mint	Mint NFT achievement badge (mock)
+POST	/api/event	Track user progress / AI score (optional)
+GET	/api/score/{student_id}	View accumulated score
+
+📘 Example response:
+
 {
   "status": "success",
-  "gateway": "intebix-pilot-mock",
-  "bank_ref": "EB-PILOT-2025-01",
-  "tx_hash": "DEVNET_TX_3gY..."
+  "tx_hash": "FAKE_TX_DEVNET_HASH",
+  "gateway": "Intebix × Eurasian Bank"
 }
-final README with full project details
+
+📦 Environment Setup
+
+Create .env file (or copy .env.example):
+
+RPC_URL=https://api.devnet.solana.com
+SECRET_KEY_JSON=[ ... ]   # your Devnet Keypair as JSON
+KZTE_MINT=PASTE_MINT_ADDRESS_HERE
+SCHOOL_WALLET=PASTE_SCHOOL_PUBKEY_HERE
+
+🧩 Roadmap
+
+ FastAPI backend mock (payments + NFT mint)
+
+ Frontend demo with JSON response
+
+ Solana Devnet integration (KZTE token)
+
+ Real NFT mint via Metaplex
+
+ AI gamified scoring system
+
+ Deployment for schools pilot
+
+🪙 Tracks & Impact
+Track	Focus
+Stablecoins / RWAs	Digital Tenge & Solana stable payments
+Consumer Apps	AI gamified assistant for students
+Infrastructure	Fintech bridge between banks and Solana
+
+Impact:
+EduAgent bridges Kazakhstan’s educational system and blockchain payments — combining real-world finance, AI motivation, and decentralized records for schools.
+
+🎥 Demo Video
+
+▶️ Watch on YouTube (Unlisted)
+
+(replace with your actual link)
+
+📸 Screenshot
+
+🧠 Team
+
+Rakhman Ibragimov — Founder & Developer
+🇰🇿 Kazakhstan · @jangoman
+ · SuperteamKZ
+
+🔖 License
+
+MIT License © 2025 Rakhman Ibragimov
+This project was built as part of the Solana Cypherpunk Hackathon 2025.

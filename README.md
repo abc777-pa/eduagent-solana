@@ -48,29 +48,25 @@ Tracks: Stablecoins / Infrastructure / Consumer Apps
 
 ```mermaid
 flowchart TD
-  %% === FRONTEND LAYER ===
   subgraph Frontend
-    Web["🖥 Web Dashboard (HTML/JS)"]
-    TG["💬 Telegram Bot (Telebot)"]
+    Web["Web Dashboard (HTML/JS)"]
+    TG["Telegram Bot (Telebot)"]
   end
 
-  %% === BACKEND LAYER ===
   subgraph Backend
-    API["🌐 REST API endpoints"]
-    AI["🧠 AI Engine (Gemini)"]
-    Pay["💰 Payment verification"]
-    RPC["🔗 RPC middleware between Frontend and Solana"]
+    API["REST API endpoints"]
+    AI["AI Engine (Gemini)"]
+    Pay["Payment verification"]
+    RPC["RPC middleware between Frontend and Solana"]
   end
 
-  %% === SOLANA LAYER ===
   subgraph Solana
-    Client["⚙️ solana-py client"]
-    Devnet["🌍 Devnet RPC Node"]
-    Token["🪙 Token & NFT minting"]
-    Prog["📜 Smart Program (mock) for receipts"]
+    Client["solana-py client"]
+    Devnet["Devnet RPC Node"]
+    Token["Token & NFT minting"]
+    Prog["Smart Program (mock) for receipts"]
   end
 
-  %% === DATA FLOW ===
   Web --> API
   TG --> API
   API --> Pay --> RPC --> Client --> Devnet --> Token --> Prog

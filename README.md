@@ -1,10 +1,34 @@
- 🧠 EduAgent — AI Assistant for Schools on Solana  
+# 🧠 EduAgent — AI Assistant for Schools on Solana  
 
-**Pilot Integration:** Intebix × Eurasian Bank | Digital Tenge (KZTE) | NFT Achievements | AI Gamification  
+![Solana](https://img.shields.io/badge/Built%20on-Solana-9945FF)
+![Hackathon](https://img.shields.io/badge/Event-Cypherpunk%202025-orange)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 
-EduAgent connects schools in Kazakhstan to the Digital Tenge (KZTE) pilot via Solana blockchain.  
-It automates tuition payments and rewards students with NFT achievement badges powered by AI gamification.  
-Built during the **Solana Cypherpunk Hackathon 2025**.  
+<p align="center">
+  <img src="assets/banner.png" alt="EduAgent banner" width="800"/>
+</p>
+
+> 🏆 Built for **Solana Cypherpunk Hackathon 2025**
+
+---
+
+## Table of Contents
+- [Overview](#-overview)
+- [Pitch Summary](#-pitch-summary)
+- [Features](#-features)
+- [Solana Integration](#-solana-integration)
+- [Problem & Vision](#-problem--vision)
+- [Tech Stack](#-tech-stack)
+- [AI & Gamification](#-ai--gamification)
+- [Pilot Integration](#-pilot-integration)
+- [Roadmap](#️-roadmap)
+- [Team](#-team)
+- [Extra Module — AI Sales Assistant](#-extra-module--ai-sales-assistant)
+- [Installation](#-installation)
+- [Environment Setup](#-environment-setup)
+- [Submission Links](#-submission-links)
+- [License](#-license)
+- [Local Description (RU)](#-local-description-ru)
 
 ---
 
@@ -42,6 +66,7 @@ as part of the **Digital Tenge pilot with Intebix and Eurasian Bank**.
 
 EduAgent uses **Solana Devnet** to tokenize payment confirmations and mint achievement NFTs.  
 Each transaction is recorded on-chain through a custom Solana program and verified via the RPC API.  
+
 Without Solana, the system would lose transparency and proof-of-ownership —  
 on-chain logic ensures every NFT represents a real verified milestone.  
 
@@ -51,11 +76,12 @@ on-chain logic ensures every NFT represents a real verified milestone.
 
 Kazakhstan is pioneering one of the world’s first **Digital Tenge pilots**,  
 yet most schools still rely on cash payments and manual reporting.  
+
 EduAgent creates a transparent digital ecosystem where  
 tuition, performance, and achievements are unified on-chain.  
 
-Our vision:  
-**AI-driven education meets transparent blockchain finance.**  
+**Vision:**  
+AI-driven education meets transparent blockchain finance.  
 
 ---
 
@@ -97,62 +123,79 @@ Each transaction is mock-verified and returned with a blockchain hash:
   "bank_ref": "EB-PILOT-2025-01",
   "tx_hash": "DEVNET_TX_97260d07d2bcc70342ddca3663eb4fae"
 }
-View Example Transaction on Solana Explorer
+```
 
-🛣️ Roadmap
-Quarter	Milestone
-Q4 2025	Pilot launch with KZTE + Intebix (mock integration)
-Q1 2026	Real NFT minting on Solana Devnet
-Q2 2026	Integration with Solana Pay and school CRMs
-Q3 2026	Public rollout across Kazakhstan
-2027	Expansion to Central Asia and EduCoin token model
+[🔍 View Example Transaction on Solana Explorer](https://explorer.solana.com/tx/DEVNET_TX_97260d07d2bcc70342ddca3663eb4fae?cluster=devnet)
 
-👥 Team
-Rakhman Ibragimov — Founder & Developer
-Expertise: Solana Devnet, FastAPI, AI gamification, education tech.
-Building EduAgent full-time after Cypherpunk Hackathon.
+---
 
-🧠 Extra Module: AI Sales Assistant
-Located in /tools/asketh_bot.py — a Gemini-powered console bot that simulates human-like sales dialogues for English-learning programs.
-This module demonstrates EduAgent’s potential for AI-driven customer interaction and personalized learning recommendations.
+## 🛣️ Roadmap
 
-🪄 The assistant follows a simple principle:
+| Quarter | Milestone |
+|----------|------------|
+| Q4 2025 | Pilot launch with KZTE + Intebix (mock integration) |
+| Q1 2026 | Real NFT minting on Solana Devnet |
+| Q2 2026 | Integration with Solana Pay and school CRMs |
+| Q3 2026 | Public rollout across Kazakhstan |
+| 2027 | Expansion to Central Asia and EduCoin token model |
 
-“Don’t sell air — guide students toward results.”
+---
 
-📦 Installation
-bash
-Копировать код
+## 👥 Team
+
+**Rakhman Ibragimov** — Founder & Developer  
+Expertise: Solana Devnet, FastAPI, AI gamification, education tech.  
+Building EduAgent full-time after Cypherpunk Hackathon.  
+
+---
+
+## 🧠 Extra Module — AI Sales Assistant  
+
+Located in `/tools/asketh_bot.py` — a Gemini-powered console bot simulating natural conversations  
+for English course sales. It demonstrates EduAgent’s capability for **AI-driven customer interaction** and **personalized learning guidance**.  
+
+🪄 Principle: *“Don’t sell air — guide students toward results.”*  
+
+---
+
+## 📦 Installation
+
+```bash
 git clone https://github.com/abc777-pa/eduagent-solana.git
 cd eduagent-solana
 pip install -r requirements.txt
 uvicorn backend.app.main:app --reload --port 8000
+```
+
 Then open the frontend:
 
-bash
-Копировать код
+```bash
 python -m http.server 5500
-🧩 Environment Setup
-ini
-Копировать код
+```
+
+---
+
+## 🧩 Environment Setup
+
+```ini
 RPC_URL=https://api.devnet.solana.com
 SECRET_KEY_JSON=[ ... ]
 KZTE_MINT=PASTE_MINT_ADDRESS_HERE
 SCHOOL_WALLET=PASTE_SCHOOL_PUBKEY_HERE
 PORT=8000
-🧭 Submission Links
-🔗 GitHub: https://github.com/abc777-pa/eduagent-solana
+```
 
-🏁 Colosseum: https://arena.colosseum.org/
+---
 
-💬 Superteam KZ: https://t.me/Superteamkz_cypherpunk
+## 🧭 Submission Links  
 
-📜 License
+- 🔗 **GitHub:** [https://github.com/abc777-pa/eduagent-solana](https://github.com/abc777-pa/eduagent-solana)  
+- 🏁 **Colosseum:** [https://arena.colosseum.org/](https://arena.colosseum.org/)  
+- 💬 **Superteam KZ:** [https://t.me/Superteamkz_cypherpunk](https://t.me/Superteamkz_cypherpunk)  
 
-MIT License © 2025 Rakhman Ibragimov
-Built with ❤️ for Solana Cypherpunk Hackathon 2025
+---
 
-🇷🇺 Local Description
-EduAgent — это AI-ассистент для школ Казахстана, который объединяет оплату обучения и мотивацию через NFT-достижения.
-Проект участвует в пилоте Цифрового Тенге (KZTE) совместно с Intebix и Евразийским Банком, используя Solana Devnet для прозрачных платежей и токенизации достижений.
-Разработчик: Рахман Ибрагимов (Astana, KZ).
+## 📜 License  
+
+**MIT License © 2025 Rakhman Ibragimov**  
+Built with ❤️ for Solana Cypherpunk Hackathon 2025 

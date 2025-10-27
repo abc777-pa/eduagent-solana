@@ -1,4 +1,4 @@
-🧠 EduAgent — AI Assistant for Schools on Solana  
+# 🧠 EduAgent — AI Assistant for Schools on Solana  
 
 ![Solana](https://img.shields.io/badge/Built%20on-Solana-9945FF)
 ![Hackathon](https://img.shields.io/badge/Event-Cypherpunk%202025-orange)
@@ -23,14 +23,12 @@
 - [AI Layer](#-ai-layer)
 - [Features](#-features)
 - [Tech Stack](#-tech-stack)
-- [Security & Privacy](#-security--privacy)
 - [Deployment](#-deployment)
 - [Roadmap](#-roadmap)
 - [Team](#-team)
 - [Installation](#-installation)
 - [Environment Setup](#-environment-setup)
 - [License](#-license)
-- [Local Description (RU)](#-local-description-ru)
 
 ---
 
@@ -39,10 +37,10 @@
 **EduAgent** is an AI-powered assistant and payment system for schools in Kazakhstan,  
 built on **Solana Devnet** with integration of **KZTE stablecoin** and **USDC**.  
 The project focuses on transparent tuition payments, on-chain progress tracking,  
-and gamified learning rewards for students and parents.   
+and gamified learning rewards for students and parents.  
 
 Built by: **Rakhman Ibragimov 🇰🇿**  
-Tracks: Stablecoins / Infrastructure / Consumer Apps / Privacy  
+Tracks: Stablecoins / Infrastructure / Consumer Apps  
 
 ---
 
@@ -51,30 +49,30 @@ Tracks: Stablecoins / Infrastructure / Consumer Apps / Privacy
 ```mermaid
 flowchart TD
   %% === FRONTEND LAYER ===
-  subgraph Frontend [FRONTEND (Web + Telegram)]
-    Web[🖥 Web Dashboard (HTML/JS)]
-    TG[💬 Telegram Bot (Telebot)]
+  subgraph Frontend
+    Web["🖥 Web Dashboard (HTML/JS)"]
+    TG["💬 Telegram Bot (Telebot)"]
   end
 
   %% === BACKEND LAYER ===
-  subgraph Backend [BACKEND (FastAPI + Flask)]
-    API[🌐 REST API endpoints]
-    AI[🧠 AI Engine (Gemini)]
-    Pay[💰 Payment verification]
-    RPC[🔗 RPC middleware between Frontend and Solana]
+  subgraph Backend
+    API["🌐 REST API endpoints"]
+    AI["🧠 AI Engine (Gemini)"]
+    Pay["💰 Payment verification"]
+    RPC["🔗 RPC middleware between Frontend and Solana"]
   end
 
   %% === SOLANA LAYER ===
-  subgraph Solana [SOLANA LAYER (Devnet)]
-    Client[⚙️ solana-py client]
-    Devnet[🌍 Devnet RPC Node]
-    Token[🪙 Token & NFT minting]
-    Prog[📜 Smart Program (mock) for receipts]
+  subgraph Solana
+    Client["⚙️ solana-py client"]
+    Devnet["🌍 Devnet RPC Node"]
+    Token["🪙 Token & NFT minting"]
+    Prog["📜 Smart Program (mock) for receipts"]
   end
 
   %% === DATA FLOW ===
   Web --> API
-  TG  --> API
+  TG --> API
   API --> Pay --> RPC --> Client --> Devnet --> Token --> Prog
 🔁 Data Flow
 Example: Tuition Payment with KZTE (Devnet)
@@ -92,6 +90,7 @@ Telegram or Web UI shows blockchain receipt.
 NFT “Tuition Verified” badge is minted on-chain.
 
 json
+Копировать код
 {
   "status": "success",
   "student": "ST-1024",
@@ -103,6 +102,7 @@ json
 All backend logic runs inside /backend/app/main.py (FastAPI).
 
 python
+Копировать код
 @app.get("/healthz")
 def health():
     return {"rpc": "ok", "version": client.get_version()}
@@ -120,6 +120,7 @@ def ask_ai(question: Question):
 Web Example
 
 javascript
+Копировать код
 async function getBalance(pubkey) {
   const res = await fetch(`/api/solana/balance?pubkey=${pubkey}`);
   const data = await res.json();
@@ -138,6 +139,7 @@ Implemented using solana-py and Web3.js.
 Example RPC interactions:
 
 python
+Копировать код
 client = Client("https://api.devnet.solana.com")
 balance = client.get_balance(pubkey)
 signature = client.send_transaction(tx, signer)
@@ -150,8 +152,6 @@ Token Program (USDC, KZTE)
 
 Metaplex (NFT minting)
 
-Planned: Arcium privacy compute
-
 🧪 Devnet Deployment
 For testing and verification, EduAgent is fully deployed on Solana Devnet.
 All program interactions, token mints, and NFT achievements are live and testable.
@@ -159,7 +159,7 @@ All program interactions, token mints, and NFT achievements are live and testabl
 Network Configuration:
 
 makefile
-
+Копировать код
 RPC_URL=https://api.devnet.solana.com
 CLUSTER=devnet
 Status: ✅ Active and responding
@@ -203,11 +203,13 @@ The assistant adapts to each school’s data and supports English, Russian, and 
 Prompt:
 
 scss
+Копировать код
 You are EduAgent — an AI assistant for schools in Kazakhstan.
 Help parents manage tuition, progress, and attendance.
 API Example:
 
 bash
+Копировать код
 POST /api/ai
 {
   "question": "When is next math lesson?"
@@ -215,6 +217,7 @@ POST /api/ai
 Response:
 
 json
+Копировать код
 {"reply": "Math class starts at 10:30 AM tomorrow."}
 🧰 Tech Stack
 Layer	Technology
@@ -225,17 +228,12 @@ AI	Google Gemini (genai SDK)
 Payments	Mock Intebix × Eurasian Bank
 Database	Supabase / PostgreSQL
 NFTs	Metaplex
-Privacy	Arcium (Encrypted Compute)
-
-🔒 Security & Privacy
-EduAgent is Arcium-ready.
-All student analytics (attendance, grades) are designed for encrypted compute —
-processed privately and validated via ZK Proofs on Solana.
 
 ☁️ Deployment
 Local
 
 bash
+Копировать код
 uvicorn backend.app.main:app --reload --port 8000
 python -m http.server 5500
 Production Options
@@ -251,7 +249,7 @@ Quarter	Milestone
 Q4 2025	Pilot launch with KZTE + mock Intebix
 Q1 2026	NFT reward system via Metaplex
 Q2 2026	Solana Pay integration
-Q3 2026	Arcium encrypted analytics
+Q3 2026	Wider pilot with partner schools
 Q4 2026	Kazakhstan school rollout
 
 👥 Team
@@ -261,6 +259,7 @@ Community: Superteam KZ × Solana Builders
 
 📦 Installation
 bash
+Копировать код
 git clone https://github.com/abc777-pa/eduagent-solana.git
 cd eduagent-solana
 pip install -r requirements.txt
@@ -268,9 +267,11 @@ uvicorn backend.app.main:app --reload
 Frontend:
 
 bash
+Копировать код
 python -m http.server 5500
 ⚙️ Environment Setup
 ini
+Копировать код
 RPC_URL=https://api.devnet.solana.com
 SECRET_KEY_JSON=[ ... ]
 KZTE_MINT=4R4Ve5xHaHzZLJxKcL5UZFXEhCFgC7yUv3xHpoZSnQfL

@@ -10,8 +10,8 @@ Built during the **Solana Cypherpunk Hackathon 2025**.
 
 ## 🌍 Overview  
 
-EduAgent is more than software — it’s a mission to make education more transparent, accessible, and inspiring through **AI** and **Solana blockchain**.  
-We automate communication, attendance tracking, and tuition payments for schools while motivating students with NFT achievements and AI-guided goals.  
+EduAgent is a pilot project bridging **Kazakhstan’s educational system** and **Solana blockchain**.  
+It enables schools to accept **stablecoin (KZTE / USDC)** payments while gamifying student motivation through **AI-generated NFT badges** for attendance, performance, and engagement.  
 
 Built by: **Rakhman Ibragimov 🇰🇿**  
 Location: **Kazakhstan**  
@@ -19,32 +19,43 @@ Tracks: Stablecoins / RWAs / Consumer Apps / Infrastructure
 
 ---
 
-## 🌐 Demo Screenshot  
+## 🎯 Pitch Summary  
 
-![Demo Screenshot](assets/screenshot.png)
-
-🔗 [Live Demo (localhost)](http://127.0.0.1:5500)  
-🧠 [Backend API Docs](http://127.0.0.1:8000/docs)  
+EduAgent — это AI-ассистент для школ Казахстана,  
+который объединяет оплату обучения и мотивацию через NFT-достижения на Solana.  
+Проект решает реальные задачи прозрачности и вовлечённости  
+в рамках пилота **Digital Tenge × Intebix × Eurasian Bank**.  
 
 ---
 
 ## 🚀 Features  
 
-- 💰 Payment flow through **Digital Tenge (KZTE)** and **USDC**  
-- 🧾 Mock integration with **Intebix × Eurasian Bank**  
+- 💰 Tuition payments with **Digital Tenge (KZTE)** and **USDC** via Solana Devnet  
+- 🧾 Mock integration with **Intebix × Eurasian Bank** pilot gateway  
 - 🎓 NFT achievements using **Metaplex Standard**  
-- 🤖 AI gamification powered by FastAPI + Gemini/OpenAI  
-- 🔒 Secure and auditable transactions on **Solana Devnet**  
+- 🤖 AI gamification powered by **FastAPI + Gemini/OpenAI**  
+- 🔒 Secure and auditable transactions on **Solana blockchain**  
+
+---
+
+## 🔗 Solana Integration  
+
+EduAgent uses **Solana Devnet** to tokenize payment confirmations and mint achievement NFTs.  
+Each transaction is recorded on-chain through a custom Solana program and verified via the RPC API.  
+Without Solana, the system would lose transparency and proof-of-ownership —  
+on-chain logic ensures every NFT represents a real verified milestone.  
 
 ---
 
 ## 💡 Problem & Vision  
 
 Kazakhstan is pioneering one of the world’s first **Digital Tenge pilots**,  
-yet most schools still operate offline — manual payments, paper reports, and low student motivation.  
+yet most schools still rely on cash payments and manual reporting.  
+EduAgent creates a transparent digital ecosystem where  
+tuition, performance, and achievements are unified on-chain.  
 
-EduAgent connects this national fintech innovation with the education sector,  
-creating a transparent digital ecosystem where payments, communication, and achievements live on-chain.  
+Our vision:  
+**AI-driven education meets transparent blockchain finance.**  
 
 ---
 
@@ -55,29 +66,29 @@ creating a transparent digital ecosystem where payments, communication, and achi
 | Frontend | HTML + JavaScript |  
 | Backend | FastAPI (Python) |  
 | Blockchain | Solana Web3.js (Devnet) |  
-| Payments | Mock Intebix × Eurasian Bank Pilot Gateway + Phantom Wallet |  
+| Payments | Mock Intebix × Eurasian Bank Gateway |  
 | Database | Supabase / PostgreSQL |  
-| NFTs | Metaplex NFT Standard (Achievements, Badges, Certificates) |  
+| NFTs | Metaplex NFT Standard |  
 
 ---
 
 ## 🧠 AI & Gamification  
 
-EduAgent turns learning into an interactive, rewarding experience.  
-AI tracks progress, analyzes engagement, and suggests personal goals.  
+EduAgent transforms learning into an interactive experience.  
+AI tracks progress, analyzes engagement, and suggests goals while rewarding students with NFTs.  
 
-🏅 **Examples of NFT Badges:**  
+🏅 **Example Badges:**  
 - “STEM Explorer” — for winning a science olympiad  
-- “Perfect Attendance” — for completing 10 days of perfect attendance  
+- “Perfect Attendance” — for consistent participation  
 - “Kindness Token” — for helping classmates  
-- “AI Mentor Badge” — for completing a course with excellence  
+- “AI Mentor Badge” — for completing AI-guided courses  
 
 ---
 
 ## 🧾 Pilot Integration  
 
-EduAgent simulates the **Intebix × Eurasian Bank pilot** for Digital Tenge payments using a mock gateway and **Solana Devnet**.  
-When parents pay tuition, the transaction is confirmed on-chain within seconds — transparent, auditable, and secure.  
+EduAgent simulates the **Intebix × Eurasian Bank pilot** for Digital Tenge payments using Solana Devnet.  
+Each transaction is mock-verified and returned with a blockchain hash:  
 
 ```json
 {
@@ -88,18 +99,46 @@ When parents pay tuition, the transaction is confirmed on-chain within seconds �
 }
 View Example Transaction on Solana Explorer
 
+🛣️ Roadmap
+Quarter	Milestone
+Q4 2025	Pilot launch with KZTE + Intebix (mock integration)
+Q1 2026	Real NFT minting on Solana Devnet
+Q2 2026	Integration with Solana Pay and school CRMs
+Q3 2026	Public rollout across Kazakhstan
+2027	Expansion to Central Asia and EduCoin token model
+
+👥 Team
+Rakhman Ibragimov — Founder & Developer
+Expertise: Solana Devnet, FastAPI, AI gamification, education tech.
+Building EduAgent full-time after Cypherpunk Hackathon.
+
 📦 Installation
 bash
-Копировать код
 git clone https://github.com/abc777-pa/eduagent-solana.git
 cd eduagent-solana
 pip install -r requirements.txt
 uvicorn backend.app.main:app --reload --port 8000
-Then open frontend/index.html in your browser or run:
+Then open the frontend:
 
 bash
-Копировать код
 python -m http.server 5500
+🧩 Environment Setup
+Create .env file or copy from .env.example:
+
+ini
+Копировать код
+RPC_URL=https://api.devnet.solana.com
+SECRET_KEY_JSON=[ ... ]
+KZTE_MINT=PASTE_MINT_ADDRESS_HERE
+SCHOOL_WALLET=PASTE_SCHOOL_PUBKEY_HERE
+PORT=8000
+🧭 Submission Links
+🔗 GitHub: https://github.com/abc777-pa/eduagent-solana
+
+🏁 Colosseum: https://arena.colosseum.org/
+
+💬 Superteam KZ: https://t.me/Superteamkz_cypherpunk
+
 📜 License
 MIT License © 2025 Rakhman Ibragimov
-Built with ❤️ for Solana Cypherpunk Hackathon
+Built with ❤️ for Solana Cypherpunk Hackathon 2025

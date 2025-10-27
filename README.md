@@ -5,7 +5,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 
 <p align="center">
-  <img src="assets/banner.png" alt="EduAgent banner" width="700"/>
+  <img src="assets/banner.png" alt="EduAgent banner" width="800"/>
 </p>
 
 > 🏆 Built for **Solana Cypherpunk Hackathon 2025**

@@ -21,10 +21,10 @@ Tracks: Stablecoins / RWAs / Consumer Apps / Infrastructure
 
 ## 🎯 Pitch Summary  
 
-EduAgent — это AI-ассистент для школ Казахстана,  
-который объединяет оплату обучения и мотивацию через NFT-достижения на Solana.  
-Проект решает реальные задачи прозрачности и вовлечённости  
-в рамках пилота **Digital Tenge × Intebix × Eurasian Bank**.  
+EduAgent is an AI-powered assistant for schools in Kazakhstan  
+that combines tuition payments and student motivation through on-chain NFT achievements on Solana.  
+The project solves real transparency and engagement problems  
+as part of the **Digital Tenge pilot with Intebix and Eurasian Bank**.  
 
 ---
 
@@ -112,6 +112,14 @@ Rakhman Ibragimov — Founder & Developer
 Expertise: Solana Devnet, FastAPI, AI gamification, education tech.
 Building EduAgent full-time after Cypherpunk Hackathon.
 
+🧠 Extra Module: AI Sales Assistant
+Located in /tools/asketh_bot.py — a Gemini-powered console bot that simulates human-like sales dialogues for English-learning programs.
+This module demonstrates EduAgent’s potential for AI-driven customer interaction and personalized learning recommendations.
+
+🪄 The assistant follows a simple principle:
+
+“Don’t sell air — guide students toward results.”
+
 📦 Installation
 bash
 git clone https://github.com/abc777-pa/eduagent-solana.git
@@ -126,7 +134,6 @@ python -m http.server 5500
 Create .env file or copy from .env.example:
 
 ini
-Копировать код
 RPC_URL=https://api.devnet.solana.com
 SECRET_KEY_JSON=[ ... ]
 KZTE_MINT=PASTE_MINT_ADDRESS_HERE
@@ -142,3 +149,8 @@ PORT=8000
 📜 License
 MIT License © 2025 Rakhman Ibragimov
 Built with ❤️ for Solana Cypherpunk Hackathon 2025
+
+🇷🇺 Local Description
+EduAgent — это AI-ассистент для школ Казахстана, который объединяет оплату обучения и мотивацию через NFT-достижения.
+Проект участвует в пилоте Цифрового Тенге (KZTE) совместно с Intebix и Евразийским Банком, используя Solana Devnet для прозрачных платежей и токенизации достижений.
+Разработчик: Рахман Ибрагимов (Astana, KZ).

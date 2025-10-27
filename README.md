@@ -1,4 +1,4 @@
-# 🧠 EduAgent — AI Assistant for Schools on Solana  
+ 🧠 EduAgent — AI Assistant for Schools on Solana  
 
 **Pilot Integration:** Intebix × Eurasian Bank | Digital Tenge (KZTE) | NFT Achievements | AI Gamification  
 
@@ -122,6 +122,7 @@ This module demonstrates EduAgent’s potential for AI-driven customer interacti
 
 📦 Installation
 bash
+Копировать код
 git clone https://github.com/abc777-pa/eduagent-solana.git
 cd eduagent-solana
 pip install -r requirements.txt
@@ -129,11 +130,11 @@ uvicorn backend.app.main:app --reload --port 8000
 Then open the frontend:
 
 bash
+Копировать код
 python -m http.server 5500
 🧩 Environment Setup
-Create .env file or copy from .env.example:
-
 ini
+Копировать код
 RPC_URL=https://api.devnet.solana.com
 SECRET_KEY_JSON=[ ... ]
 KZTE_MINT=PASTE_MINT_ADDRESS_HERE
@@ -147,6 +148,7 @@ PORT=8000
 💬 Superteam KZ: https://t.me/Superteamkz_cypherpunk
 
 📜 License
+
 MIT License © 2025 Rakhman Ibragimov
 Built with ❤️ for Solana Cypherpunk Hackathon 2025
 

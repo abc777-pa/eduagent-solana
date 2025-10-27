@@ -1,4 +1,4 @@
-# 🧠 EduAgent — AI Assistant for Schools on Solana  
+# 🧠 EduAgent — AI Assistant for Schools on Solana
 
 ![Solana](https://img.shields.io/badge/Built%20on-Solana-9945FF)
 ![Hackathon](https://img.shields.io/badge/Event-Cypherpunk%202025-orange)
@@ -32,15 +32,13 @@
 
 ---
 
-## 🌍 Overview  
+## 🌍 Overview
 
-**EduAgent** is an AI-powered assistant and payment system for schools in Kazakhstan,  
-built on **Solana Devnet** with integration of **KZTE stablecoin** and **USDC**.  
-The project focuses on transparent tuition payments, on-chain progress tracking,  
-and gamified learning rewards for students and parents.  
+**EduAgent** is an AI-powered assistant and payment system for schools in Kazakhstan, built on **Solana Devnet** with integration of **KZTE stablecoin** and **USDC**.  
+The project focuses on transparent tuition payments, on-chain progress tracking, and gamified learning rewards for students and parents.
 
 Built by: **Rakhman Ibragimov 🇰🇿**  
-Tracks: Stablecoins / Infrastructure / Consumer Apps  
+Tracks: Stablecoins / Infrastructure / Consumer Apps
 
 ---
 
@@ -49,27 +47,32 @@ Tracks: Stablecoins / Infrastructure / Consumer Apps
 ```mermaid
 flowchart TD
   subgraph Frontend
-    Web["Web Dashboard (HTML/JS)"]
-    TG["Telegram Bot (Telebot)"]
+    Web[Web Dashboard (HTML/JS)]
+    TG[Telegram Bot (Telebot)]
   end
 
   subgraph Backend
-    API["REST API endpoints"]
-    AI["AI Engine (Gemini)"]
-    Pay["Payment verification"]
-    RPC["RPC middleware between Frontend and Solana"]
+    API[REST API endpoints]
+    AI[AI Engine (Gemini)]
+    Pay[Payment verification]
+    RPC[RPC middleware between Frontend and Solana]
   end
 
   subgraph Solana
-    Client["solana-py client"]
-    Devnet["Devnet RPC Node"]
-    Token["Token & NFT minting"]
-    Prog["Smart Program (mock) for receipts"]
+    Client[solana-py client]
+    Devnet[Devnet RPC Node]
+    Token[Token and NFT minting]
+    Prog[Smart Program (mock) for receipts]
   end
 
   Web --> API
   TG --> API
-  API --> Pay --> RPC --> Client --> Devnet --> Token --> Prog
+  API --> Pay
+  Pay --> RPC
+  RPC --> Client
+  Client --> Devnet
+  Devnet --> Token
+  Token --> Prog
 🔁 Data Flow
 Example: Tuition Payment with KZTE (Devnet)
 
@@ -86,7 +89,6 @@ Telegram or Web UI shows blockchain receipt.
 NFT “Tuition Verified” badge is minted on-chain.
 
 json
-Копировать код
 {
   "status": "success",
   "student": "ST-1024",
@@ -98,7 +100,6 @@ json
 All backend logic runs inside /backend/app/main.py (FastAPI).
 
 python
-Копировать код
 @app.get("/healthz")
 def health():
     return {"rpc": "ok", "version": client.get_version()}
@@ -116,7 +117,6 @@ def ask_ai(question: Question):
 Web Example
 
 javascript
-Копировать код
 async function getBalance(pubkey) {
   const res = await fetch(`/api/solana/balance?pubkey=${pubkey}`);
   const data = await res.json();
@@ -132,15 +132,13 @@ Telegram Commands
 
 🔗 Solana Layer
 Implemented using solana-py and Web3.js.
-Example RPC interactions:
 
 python
-Копировать код
 client = Client("https://api.devnet.solana.com")
 balance = client.get_balance(pubkey)
 signature = client.send_transaction(tx, signer)
 status = client.get_signature_status(signature)
-Programs:
+Programs used:
 
 System Program
 
@@ -149,48 +147,32 @@ Token Program (USDC, KZTE)
 Metaplex (NFT minting)
 
 🧪 Devnet Deployment
-For testing and verification, EduAgent is fully deployed on Solana Devnet.
-All program interactions, token mints, and NFT achievements are live and testable.
+For testing and verification, EduAgent runs on Solana Devnet. All program interactions, token mints, and NFT achievements are testable.
 
-Network Configuration:
+Network Configuration
 
 makefile
-Копировать код
 RPC_URL=https://api.devnet.solana.com
 CLUSTER=devnet
-Status: ✅ Active and responding
-🔧 Smart Contract (Program)
-Program ID:
-8ZC6yb6Vn2wJUZKdrL2oW5pqQFVRFpDYqDb1w8VbyybH
-
+Status: Active
+Smart Contract (Program)
+Program ID: 8ZC6yb6Vn2wJUZKdrL2oW5pqQFVRFpDYqDb1w8VbyybH
 Handles mock tuition payments and triggers NFT minting after verification.
+View Program on Explorer
 
-🔍 View Program on Solana Explorer
-
-💰 Stablecoin Integration
+Stablecoin Integration
 Token	Mint Address	Description
 KZTE (Digital Tenge)	4R4Ve5xHaHzZLJxKcL5UZFXEhCFgC7yUv3xHpoZSnQfL	Mock stablecoin for schools
 USDC (Devnet)	7XS1EibDL5ShKRYtRmr7nhJYt6SKCqMKeDRrBQ1iR9rJ	Official Solana Devnet USDC mint
 
-💡 View KZTE Mint on Explorer
+View KZTE Mint
 
-🎓 School Wallet & NFT Mint
+School Wallet & NFT Mint
 Component	Devnet Address	Function
 School Treasury Wallet	9kR8ZZ9D3RQkWkY8Z1MpvBxTSD7SMF85i4iDqEfeQ6Ef	Receives tuition
 Achievement NFT Mint	B71mZqYRi6gqH4mGafSkaoGbTtVfB2ELbKq9bPKRrj6t	Issues student badges
 
-🎖 View NFT Example
-
-🧠 Devnet Testing Instructions
-Open Phantom Wallet → Switch to Devnet
-
-Use Faucet to get 1–2 SOL for test fees
-
-Send KZTE/USDC to the School Wallet
-
-Run EduAgent /balance and /pay to verify on-chain
-
-Check NFT collectible in your wallet
+View NFT Example
 
 🤖 AI Layer
 EduAgent uses Gemini 1.5 Flash for natural conversation and gamification.
@@ -199,13 +181,11 @@ The assistant adapts to each school’s data and supports English, Russian, and 
 Prompt:
 
 scss
-Копировать код
 You are EduAgent — an AI assistant for schools in Kazakhstan.
 Help parents manage tuition, progress, and attendance.
 API Example:
 
 bash
-Копировать код
 POST /api/ai
 {
   "question": "When is next math lesson?"
@@ -213,7 +193,6 @@ POST /api/ai
 Response:
 
 json
-Копировать код
 {"reply": "Math class starts at 10:30 AM tomorrow."}
 🧰 Tech Stack
 Layer	Technology
@@ -229,7 +208,6 @@ NFTs	Metaplex
 Local
 
 bash
-Копировать код
 uvicorn backend.app.main:app --reload --port 8000
 python -m http.server 5500
 Production Options
@@ -255,7 +233,6 @@ Community: Superteam KZ × Solana Builders
 
 📦 Installation
 bash
-Копировать код
 git clone https://github.com/abc777-pa/eduagent-solana.git
 cd eduagent-solana
 pip install -r requirements.txt
@@ -263,11 +240,9 @@ uvicorn backend.app.main:app --reload
 Frontend:
 
 bash
-Копировать код
 python -m http.server 5500
 ⚙️ Environment Setup
 ini
-Копировать код
 RPC_URL=https://api.devnet.solana.com
 SECRET_KEY_JSON=[ ... ]
 KZTE_MINT=4R4Ve5xHaHzZLJxKcL5UZFXEhCFgC7yUv3xHpoZSnQfL

@@ -8,6 +8,12 @@ Built during the Solana Cypherpunk Hackathon 2025.
 
 Goal: Bring together education and Web3 finance.
 EduAgent enables schools to accept stablecoin payments (KZTE / USDC) and reward students for attendance, quiz completion, and good performance through AI-tracked NFT achievements.
+## 🌐 Demo Screenshot
+
+![Demo Screenshot](assets/screenshot.png)
+
+🔗 [Live Demo (localhost)](http://127.0.0.1:5500)  
+🧠 [Backend API Docs](http://127.0.0.1:8000/docs)
 
 Built by: Rakhman Ibragimov 🇰🇿
 Location: Kazakhstan

@@ -48,7 +48,7 @@ SOLANA LAYER (Devnet)
 └─ Mock smart program for tuition receipts
 
 yaml
-Копировать код
+
 
 ---
 
@@ -69,7 +69,6 @@ yaml
 }
 ⚙️ Backend Logic (FastAPI)
 python
-Копировать код
 @app.post("/api/pay")
 def create_payment(payload: PaymentSchema):
     tx = client.send_transaction(payload)
@@ -82,7 +81,6 @@ def ask_ai(question: Question):
 Healthcheck endpoint:
 
 python
-Копировать код
 @app.get("/healthz")
 def health():
     return {"rpc": "ok", "version": client.get_version()}
@@ -90,7 +88,6 @@ def health():
 Web (JavaScript):
 
 js
-Копировать код
 async function getBalance(pubkey) {
   const res = await fetch(`/api/solana/balance?pubkey=${pubkey}`);
   const data = await res.json();
@@ -103,7 +100,6 @@ Telegram commands:
 Implemented with solana-py + Web3.js.
 
 python
-Копировать код
 client = Client("https://api.devnet.solana.com")
 balance = client.get_balance(pubkey)
 signature = client.send_transaction(tx, signer)
@@ -124,9 +120,6 @@ You are EduAgent — an AI assistant for schools in Kazakhstan.
 Help parents manage tuition, progress, and attendance.
 
 API Example:
-
-h
-Копировать код
 POST /api/ai
 {
   "question": "When is next math lesson?"
@@ -134,7 +127,6 @@ POST /api/ai
 Response:
 
 json
-Копировать код
 {"reply": "Math class starts at 10:30 AM tomorrow."}
 🧰 Tech Stack
 Layer	Technology
@@ -150,21 +142,15 @@ Hosting	Railway + Vercel
 ☁️ Deployment
 Local Dev:
 
-bash
-Копировать код
 git clone https://github.com/abc777-pa/eduagent-solana.git
 cd eduagent-solana
 pip install -r requirements.txt
 uvicorn backend.app.main:app --reload
 Frontend:
-
-bash
-Копировать код
 python -m http.server 5500
 Environment (.env):
 
 ini
-Копировать код
 RPC_URL=https://api.devnet.solana.com
 SECRET_KEY_JSON=[ ... ]
 KZTE_MINT=4R4Ve5xHaHzZLJxKcL5UZFXEhCFgC7yUv3xHpoZSnQfL

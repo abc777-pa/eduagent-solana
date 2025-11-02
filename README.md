@@ -1,5 +1,8 @@
 🧠 EduAgent — AI Assistant for Schools on Solana
-<p align="center"> <img src="assets/banner_dark.png" alt="EduAgent Banner" width="850"/> </p> <p align="center"> <img src="https://img.shields.io/badge/Built%20on-Solana-9945FF?style=for-the-badge&logo=solana"/> <img src="https://img.shields.io/badge/Event-Cypherpunk%202025-orange?style=for-the-badge"/> <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge"/> </p>
+<p align="center">
+  <img src="assets/banner.png" alt="EduAgent — AI Assistant for Schools on Solana" width="850"/>
+</p>
+ </p> <p align="center"> <img src="https://img.shields.io/badge/Built%20on-Solana-9945FF?style=for-the-badge&logo=solana"/> <img src="https://img.shields.io/badge/Event-Cypherpunk%202025-orange?style=for-the-badge"/> <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge"/> </p>
 
 🏆 Built for Solana Cypherpunk Hackathon 2025
 🇰🇿 Powered by AImpact × Superteam KZ

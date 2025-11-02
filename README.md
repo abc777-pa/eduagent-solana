@@ -174,4 +174,4 @@ MIT License © 2025 Rakhman Ibragimov
 
 Built with 💜 on Solana — where AI meets Education.
 
-<p align="center"> <img src="assets/footer_dark.png" alt="EduAgent Footer" width="700"/> </p>
+<p align="center"> <img src="assets/Footer_dark.png" alt="EduAgent Footer" width="700"/> </p>
